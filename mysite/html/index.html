@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<script src="https://kit.fontawesome.com/3d124ab517.js" crossorigin="anonymous"></script>
-	<title>나 소개한다</title>
+	<title>나를 소개합니다.</title>
 	<link rel="stylesheet" type="text/css" href="../css/common.css">
 	<link rel="stylesheet" type="text/css" href="../css/effect.css">
 	<style type="text/css">
@@ -22,7 +22,6 @@
 		.side_wrap {
 			border: 1px solid red;
 			width: 450px;
-			height: 1000px;
 			margin-right: 25px;
 		}
 		.side_picture {
@@ -54,10 +53,10 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
-			height: 120px;
+			height: 165px;
 		}
 		.side_pesonal_group {
-			padding: 15px;
+			padding: 0 15px;
 		}
 		.side_personal i {
 			color: #2E4D58;
@@ -67,8 +66,8 @@
 			border-top: 1px solid #eee;
 			padding: 15px 0;
 		}
-		.nav {
-			margin-top: 25px;
+		.common_panel {
+			margin-bottom: 25px;
 			
 		}
 		.menu_title {
@@ -79,11 +78,13 @@
 			font-size: 18px;
 			border-top-left-radius: 2px;
 			border-top-right-radius: 2px;
-			display: flex;
+			/* display: flex; */
 			align-items: center;
+			height: 35px;
 		}
-		.menu_title i {
-			width: 20px;
+		.menu_title span {
+			padding-left: 10px;
+			line-height: 35px;
 		}
 		.menu_sns {
 			background-color: #2E4D58;
@@ -93,7 +94,7 @@
 			font-size: 18px;
 			border-top-left-radius: 2px;
 			border-top-right-radius: 2px;
-			display: flex;
+			/* display: flex; */
 			align-items: center;
 		}
 
@@ -101,15 +102,153 @@
 		/* 소개내용 */
 		.content_wrap {
 			border: 1px solid blue;
-			width: 850px;
-			height: 1000px;
+			width: 850px;         
 		}
-
-
-
+		.content_padding {
+			padding: 15px;
+		}
+		.bar_wrap {
+			margin-bottom: 20px;
+		}
+		.bar_border {
+			width: 815px;
+			height: 25px;
+			border: 1px solid #e7e7e7;
+			background-color: #e7e7e7;
+			overflow: hidden;
+			border-radius: 16px;
+		}
+		.bar_fill {
+			width: 0;
+			height: 25px;
+			background-color: #91677E;
+			padding: 0 15px;
+			text-align: center;
+			line-height: 25px;
+			font-weight: bold;
+			font-size: 13px;
+		}
+		.skill_title {
+			padding: 0px 0px 5px 8px;
+		}
+		.content_padding > .bar_wrap:last-child {
+			margin: 0;
+		}
+		.content_padding > table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		table, th, td {
+			border: 1px solid #2f3138;
+		}
+		th, td { padding: 5px; }
+		th {background-color: #D9C3D3; }
+		.edu_table tr:nth-child(even) {
+			background-color: #e7e7e7;
+		}
+		.edu_table tr td:first-child, .edu_table tr td:last-child {
+			text-align: center;
+		}
+		.edu_table tr:hover {
+			background-color: #D1D1D1;
+		}
+		.download_wrap {
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			padding: 25px;
+		}
+		.download_wrap div a {
+			padding: 8px 20px;
+			color: #2f3138;
+			border-radius: 5px;
+			background-color: #D9C3D3;
+		}
+		.download_wrap div a:hover {
+			box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,.19);
+		}
+		.fix_btn {
+			position: fixed;
+			right: 50px;
+			color: white;
+			width: 70px;
+			height: 70px;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 30px;
+			cursor: pointer;
+			box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,.19);
+		}
+		.fix_btn > i {
+			transition: transform .3s;
+		}
+		.fix_btn:hover > i {
+			transform: scale(1.3);
+		}
+		/* scale은 사이즈를 조절하는 것이다. scale(1.3)은 1.3배 만큼 커진다. */
+		.conn_btn {
+			bottom: 30px;
+			background-color: #962521;
+		}
+		.top_btn {
+			bottom: 115px;
+			background-color: black;
+		}
+		.msg_wrap {
+			position: absolute;
+			bottom: 0;
+			right: 90px;
+			background-color: white;
+			border-radius: 5px;
+			border: 1px solid #2f3138;
+			box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,.19);
+		}
+		.note_wrap {
+			padding: 15px;
+			color: #2f3138;
+			font-size: 15px;
+			width: 350px;
+		}
+		.send_info {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.send_info > input {
+			width: 152px;
+		}
+		.note_wrap > div {
+			margin-bottom: 8px;
+		}
 	</style>
+	<script type="text/javascript"></script>
 </head>
 <body>
+	<div class="top_btn fix_btn"><i class="fas fa-arrow-up"></i></div>
+	<div class="conn_btn fix_btn">
+		<div class="msg_wrap">
+			<div class="menu_title">
+				<i class="far fa-envelope"></i>
+				<spasn>Message</spasn>
+			</div>
+			<div class="note_wrap">
+				<div class="conn_note">Please contact me if you are interested.</div>
+				<div class="send_info">
+					<input type="type" placeholder="Name">
+					<input type="type" placeholder="Email">
+				</div>
+				<div class="send_msg">
+					<input type="text" placeholder="Message">
+				</div>
+				<div class="send_btn">
+				<a href="#"><i class="fas fa-rocket"></i>SEND</a>
+			</div>
+		</div>
+		</div>
+		<i class="far fa-envelope"></i></div>
 	<div class="wrap">
 		<aside>
 			<div class="side_wrap">
@@ -118,45 +257,28 @@
 					<div class="side_intro_group">
 						<div class="name">Mario-Hee(Jonghee Kim)</div>
 						<div class="intro">
-							I'm currently leaning JAVA, Oracle and HTML,JS <br>
+							I'm currently leaning JAVA. <br>
 						</div>
 					</div>
 					<div class="side_personal_group">
 						<div class="side_personal">
 							<div><i class="fas fa-briefcase"></i>Web Programmer</div>
-							<div><i class="fas fa-home"></i>Gwang-Ju, S.Korea</div>
+							<div><i class="fas fa-graduation-cap"></i>Master of Engineering</div>
+							<div><i class="fas fa-home"></i>Gwang-Ju, S.Korea</div>                              
 							<div><i class="fas fa-envelope"></i>whdgml944@gmail.com</div>
 							<div><i class="fas fa-mobile-alt"></i>010-8777-0000</div>
-						</div>
-						<div class="side_sns">
-							<div class="middle">
-								<a class="snsbtn" href="https://www.facebook.com/">
-									<i class="fab fa-facebook-f"></i>
-								</a>
-								<a class="snsbtn" href="https://twitter.com/?lang=ko">
-									<i class="fab fa-twitter"></i>
-								</a>
-								<a class="snsbtn" href="https://www.google.co.kr/">
-									<i class="fab fa-google"></i>
-								</a>
-								<a class="snsbtn" href="https://www.instagram.com/?hl=ko">
-									<i class="fab fa-instagram"></i>
-								</a>
-								<a class="snsbtn" href="https://www.youtube.com/">
-									<i class="fab fa-youtube"></i>
-								</a>
-							</div>
 						</div>
 					</div>
 				</div>
 				<div class="common_panel layer nav">
-					<div class="menu_title"><i class="fas fa-bars"></i>
-					<spasn> Menu</spasn></div>		
+					<div class="menu_title">
+						<i class="fas fa-bars"></i>
+					    <spasn> Menu</spasn>
+					</div>		
 					<ul>
 						<li><a href="#">Tech Skills</a></li>
 						<li><a href="#">Education</a></li>
 						<li><a href="#">License</a></li>
-						<li><a href="#">Contact</a></li>
 					</ul>
 				</div>
 				<div class="common_panel layer nav">
@@ -182,11 +304,123 @@
 						</div>
 					</div>
 				</div>
+				<div class="common_panel layer nav">
+					<div class="menu_title">
+						<i class="fas fa-cloud-download-alt"></i>
+					    <spasn>Downloads</spasn>
+					</div>		
+					<div class="content_padding download_wrap">
+						<div class="git_wrap">
+							<a href="https://github.com/Mario-Hee" target="_blank">
+								Github<i class="fab fa-github"></i>
+							</a>
+						</div>
+						<div class="resume_wrap">
+							<a href="#">
+								Resume<i class="fas fa-arrow-circle-down"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</aside>
-
 		<section>
-			<div class="content_wrap"></div>
+			<div class="content_wrap">
+				<div class="common_panel layer nav">
+					<div class="menu_title">
+						<i class="fas fa-laptop-code"></i>
+						<spasn>Tech Skills</spasn>
+					</div>	
+					<div class="content_padding">
+						<div class="bar_wrap">
+							<div class="skill_title"><strong>Programming(JAVA, Python, Delphi)</strong></div>
+							<div><div class="bar_border"><div class="bar_fill">70%</div></div></div>
+						</div>
+						<div class="bar_wrap">
+							<div class="skill_title"><strong>Web Publishing(HTML, CSS, Jvascript, JQuery)</strong></div>
+							<div><div class="bar_border"><div class="bar_fill">65%</div></div></div>
+						</div>
+						<div class="bar_wrap">
+							<div class="skill_title"><strong>Database(Oracle, MongoDB)</strong></div>
+							<div><div class="bar_border"><div class="bar_fill">55%</div></div></div>
+						</div>
+						<div class="bar_wrap">
+							<div class="skill_title"><strong>Web Develop(Servlet, Spring)</strong></div>
+							<div><div class="bar_border"><div class="bar_fill">40%</div></div></div>
+						</div>	
+						<div class="bar_wrap">
+							<div class="skill_title"><strong>Version Managina Tool(GitHub)</strong></div>
+							<div><div class="bar_border"><div class="bar_fill">80%</div></div></div>
+						</div>	
+					</div>
+				</div>
+				<div class="common_panel layer nav">
+					<div class="menu_title">
+						<i class="fas fa-pencil-alt"></i>
+					    <spasn>Education</spasn>
+					</div>		
+					<div class="content_padding">
+						<table class="edu_table">
+							<thead>
+								<th>No</th><th>Couse name</th><th>Institution</th><th>period</th>
+							</thead>
+							<tbody>
+								<tr><td>1</td><td>SW엔지니어링 디지털 컨버전스</td><td>한국경영원 인재개발원</td><td>2019.11.12 ~ 2020.06.12</td></tr>
+								<tr><td>2</td><td></td><td></td><td></td></tr>
+								<tr><td>3</td><td></td><td></td><td></td></tr>
+								<tr><td>4</td><td></td><td></td><td></td></tr>
+								<tr><td>5</td><td></td><td></td><td></td></tr>
+							</tbody>
+						</table>	
+					</div>
+				</div>
+				<div class="common_panel layer nav">
+					<div class="menu_title">
+						<i class="fas fa-id-badge"></i>
+					    <spasn>License</spasn>
+					</div>		
+					<div class="content_padding">
+						<table class="edu_table">
+							<thead>
+								<th>No</th><th>License name</th><th>Institution</th><th>period</th>
+							</thead>
+							<tbody>
+								<tr><td>1</td><td>G-TELP</td><td>한국지텔프</td><td>??</td></tr>
+								<tr><td>2</td><td>한국사</td><td></td><td></td></tr>
+								<tr><td>3</td><td></td><td></td><td></td></tr>
+								<tr><td>4</td><td></td><td></td><td></td></tr>
+								<tr><td>5</td><td></td><td></td><td></td></tr>
+							</tbody>
+						</table>	
+					</div>
+				</div>
+				
+			</div>
 		</section>
 	</div>
-</body>
+	<!-- body 태그 안에는 HTML만 쓰자 -->
+	<!-- head 태그 안에는 CSS만 쓰자 -->
+</body> 
+	<!-- Script 태그 안에는 javascript jQuery만 쓰자 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	// $ = jQuery(제이쿼리)
+	// HTML 문서가 완료되면 동작 할 작업들
+	// Javascript에서는 함수를 만들때 fuction() {}
+	// 이름이 없는 함수 = 익명함수 
+	// 재사용할 필요가 없을때 익명함수를 쓴다.
+	// 눌렀을때만 동작하는 애들한테만 익명함수를 쓴다.
+	// 선택자를 CSS랑 똑같이 쓴다.
+	$(document).ready(function () {
+		$('.bar_wrap').find('.bar_fill').each(function() {
+			var widthVal = $(this).text();
+			$(this).animate({width: widthVal}, 1000);
+		});
+	});
+	// 여기서 each 는 JAVA에서 foreach문이다.
+	// 설명 >클래스가 .bar_wrap 를 선택하고 .bar_fill을 찾는다.(.bar_fill)막대기가 5개 이므로 다섯번 반복을 돈다. 
+	// this엔 bar_fill이 들어가있다. this(나자신)의 텍스트 값을 가져와야한다. 대입연산자가 있으므로 우측의 데이터를 좌측으로 값을 대입한다. 텍스트는 문자열이다.
+	// widthVal은 변수이다. 문자열 변수이다.(string)
+	// animate 애니메이션 효과를 준다. 1000은 1초이다. (ex.5000 = 5초, 10000 = 10초)
+</script>
 </html>
