@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale-1">
 	<script src="https://kit.fontawesome.com/3d124ab517.js" crossorigin="anonymous"></script>
 	<title>나를 소개합니다.</title>
 	<link rel="stylesheet" type="text/css" href="css/common.css">
@@ -11,6 +12,7 @@
 		@import url('https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap');
 		.wrap {
 			max-width: 1400px;
+			min-width: 360px;
 			display: flex;
 			justify-content: space-around;
 			box-sizing: border-box;
@@ -19,7 +21,7 @@
 		}
 		/* 사이드 내용*/
 		.side_wrap {
-			width: 450px;
+			max-width: 450px;
 			margin-right: 25px;
 		}
 		.side_picture {
@@ -99,7 +101,7 @@
 
 		/* 소개내용 */
 		.content_wrap {
-			width: 850px;         
+			max-width: 850px;         
 		}
 		.content_padding {
 			padding: 15px;
@@ -108,7 +110,7 @@
 			margin-bottom: 20px;
 		}
 		.bar_border {
-			width: 815px;
+			width: 100%;
 			height: 25px;
 			border: 1px solid #e7e7e7;
 			background-color: #e7e7e7;
@@ -279,6 +281,59 @@
 			height: 100%;
 			display: none;
 		}
+		/* 
+			##Dvice = Most of the Smartphones Mobiles (Portrait)
+			##Screen = B\w 320px to 479px
+			##Device = 대부분의 스마트폰 모바일 기기(세로
+			##Screen = 320px에서 479px 사이 
+		*/
+		@media (min-width: 320px) and (max-width: 480px) {
+			.wrap {
+				width: 100%;
+				flex-direction: column;
+				padding: 5px;
+			}
+			.side_wrap, .centent_wrap {
+				width: 100%;
+				margin: 0 auto;
+			}
+			.nav_menu {
+				display: none;
+			}
+			table tr th:last-child, table tr td:last-child {
+				display: none;
+			}
+			table td, table th {
+				font-size: 12px;
+			}
+			.fix_btn {
+				width: 50px;
+				height: 50px;
+				right: 20px;
+				font-size: 20px;
+			}
+			.top_btn {
+				bottom: 95px;
+			}
+			.contene_padding {
+				padding: 10px;
+			}		
+			.modal_wrap {
+				justify-content: center;
+				align-items: center;
+			}
+			.msg_wrap {
+				width: 95%;
+				position: static;
+			}
+			.note_wrap {
+				padding: 10px;
+				width: 100%;
+			}
+			.note_wrap input {
+				font-size: 12px;
+				height: 20px;
+			}
 	</style>
 	<script type="text/javascript"></script>
 </head>
@@ -339,7 +394,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="common_panel layer nav">
+				<div class="common_panel layer nav nav_menu">
 					<div class="menu_title">
 						<i class="fas fa-bars"></i>
 					    <spasn> Menu</spasn>
@@ -544,7 +599,7 @@
 	// 동등비교 값==값 , 값+type===값+type이다.
 
 	$(document).on('click', '.conn_btn', function(){
-		$('.modal_wrap').css('display', 'block');
+		$('.modal_wrap').css('display', 'flex');
 		$(this).css('display', 'none');
 	});
 	$(document).on('click', '.close_btn', function(){
