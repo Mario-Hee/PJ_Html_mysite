@@ -2,33 +2,33 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale-1">
 	<script src="https://kit.fontawesome.com/3d124ab517.js" crossorigin="anonymous"></script>
 	<title>나를 소개합니다.</title>
-	<link rel="stylesheet" type="text/css" href="../css/common.css">
-	<link rel="stylesheet" type="text/css" href="../css/effect.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/effect.css">
 	<style type="text/css">
 		@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 		@import url('https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap');
 		.wrap {
-			border: 1px solid black;
 			max-width: 1400px;
+			min-width: 360px;
 			display: flex;
-			justify-content: space-around;
+			justify-content: center;
 			box-sizing: border-box;
 			padding: 25px;
 			margin: 0 auto;
 		}
 		/* 사이드 내용*/
 		.side_wrap {
-			border: 1px solid red;
 			width: 450px;
 			margin-right: 25px;
 		}
 		.side_picture {
-			background-image: url(../img/DSA03018.jpg);
+			background-image: url(img/DSA03018.jpg);
 			background-repeat: no-repeat;
 			height: 300px;
-			position: center center;
+			background-position: center center;
 			background-size: 100%;
 		}
 		.side_intro_group {
@@ -97,11 +97,8 @@
 			/* display: flex; */
 			align-items: center;
 		}
-
-
 		/* 소개내용 */
 		.content_wrap {
-			border: 1px solid blue;
 			width: 850px;         
 		}
 		.content_padding {
@@ -111,7 +108,7 @@
 			margin-bottom: 20px;
 		}
 		.bar_border {
-			width: 815px;
+			width: 100%;
 			height: 25px;
 			border: 1px solid #e7e7e7;
 			background-color: #e7e7e7;
@@ -162,21 +159,24 @@
 			align-items: center;
 			padding: 25px;
 		}
-		.download_wrap div a {
-			padding: 8px 20px;
-			color: #2f3138;
+		.download_wrap div {
+			transition: transform .3s;
 			border-radius: 5px;
-			background-color: #ad758e;
+			overflow: hidden;
+		}
+		.download_wrap div button {
+			padding: 8px 20px;
 			color: white;
+			background-color: #ad758e;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			width: 110px;
+			height: 35px;
 		}
-		.download_wrap div a:hover {
-			box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,.19);
-		}
-		.download_wrap i {
-			transition: transform;
-		}
-		.download_wrap:hover i {
-			transform: scale(1.3);
+		.download_wrap div:hover {
+			transform: scaleX(1.2);
+			box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
 		}
 		.fix_btn {
 			position: fixed;
@@ -206,6 +206,7 @@
 		.top_btn {
 			bottom: 115px;
 			background-color: black;
+			display: none;
 		}
 		.msg_wrap {
 			position: absolute;
@@ -252,7 +253,7 @@
 			justify-content: space-between;
 			align-items: center;
 		}
-		.send_btn > a {
+		.send_btn > button {
 			width: 200px;
 			display: flex;
 			justify-content: center;
@@ -260,6 +261,9 @@
 			padding: 12px 15px;	
 			border: 1px solid #2E4D58;
 			border-radius: 5px;
+			outline: none;
+			background-color: white;
+			cursor: pointer;
 		}
 		.err_msg {
 			color: #CB4242;
@@ -275,6 +279,62 @@
 			height: 100%;
 			display: none;
 		}
+		/* 
+			##Dvice = Most of the Smartphones Mobiles (Portrait)
+			##Screen = B\w 320px to 479px
+			##Device = 대부분의 스마트폰 모바일 기기(세로
+			##Screen = 320px에서 479px 사이 
+		*/
+		@media (min-width: 320px) and (max-width: 480px) {
+			.wrap {
+				width: 100%;
+				flex-direction: column;
+				padding: 5px;
+			}
+			.side_wrap, .content_wrap {
+				width: 100%;
+				margin: 0 auto;
+			}
+			.side_picture {
+				height: 244px;
+			}
+			.nav_menu {
+				display: none;
+			}
+			table tr th:last-child, table tr td:last-child {
+				display: none;
+			}
+			table td, table th {
+				font-size: 12px;
+			}
+			.fix_btn {
+				width: 50px;
+				height: 50px;
+				right: 20px;
+				font-size: 20px;
+			}
+			.top_btn {
+				bottom: 95px;
+			}
+			.contene_padding {
+				padding: 10px;
+			}		
+			.modal_wrap {
+				justify-content: center;
+				align-items: center;
+			}
+			.msg_wrap {
+				width: 95%;
+				position: static;
+			}
+			.note_wrap {
+				padding: 10px;
+				width: 100%;
+			}
+			.note_wrap input {
+				font-size: 12px;
+				height: 20px;
+			}
 	</style>
 	<script type="text/javascript"></script>
 </head>
@@ -291,25 +351,27 @@
 				<i class="far fa-envelope"></i>
 				<span>Message</span>
 			</div>
+		<form class="gform" method="POST" action="https://script.google.com/macros/s/AKfycbyBxteyXAlDzGiiDHJntBJZzXVATK0LheBNf6tw/exec">
 			<div class="note_wrap">
 				<div class="conn_note">Please contact me if you are interested.</div>
-				<div class="send_info">
-					<div class="send_name">
-						<input type="text" class="send_input" placeholder="name">
+					<div class="send_info">
+						<div class="send_name">
+							<input type="text" class="send_input" placeholder="name" name="name">
+						</div>
+						<div class="area"></div>
+						<div class="send_email">
+						<input type="text" class="send_input" placeholder="Email" name="email">
+						</div>
 					</div>
-					<div class="area"></div>
-					<div class="send_email">
-					<input type="text" class="send_input" placeholder="Email">
+					<div class="send_msg">
+						<input type="text" class="send_input" placeholder="Message" name="message">
 					</div>
+					<div class="send_btn">
+						<span class="err_msg">Please enter a value:/</span>
+					<button type="submit">SEND MESSAGE <i class="fas fa-rocket"></i></button>
 				</div>
-				<div class="send_msg">
-					<input type="text" class="send_input" placeholder="Message">
-				</div>
-				<div class="send_btn">
-					<span class="err_msg">Please enter a value:/</span>
-				<a href="#">SEND MESSAGE<i class="fas fa-rocket"></i></a>
 			</div>
-		</div>
+		</form>
 		</div>
 	</div>
 	<div class="wrap">
@@ -320,7 +382,7 @@
 					<div class="side_intro_group">
 						<div class="name">Mario-Hee(Jonghee Kim)</div>
 						<div class="intro">
-							I'm currently leaning JAVA. <br>
+							개발자입니다. <br>
 						</div>
 					</div>
 					<div class="side_personal_group">
@@ -333,7 +395,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="common_panel layer nav">
+				<div class="common_panel layer nav nav_menu">
 					<div class="menu_title">
 						<i class="fas fa-bars"></i>
 					    <spasn> Menu</spasn>
@@ -374,14 +436,14 @@
 					</div>		
 					<div class="content_padding download_wrap">
 						<div class="git_wrap">
-							<a href="https://github.com/Mario-Hee" target="_blank">
-								Github<i class="fab fa-github"></i>
-							</a>
+							<button class="git_btn">
+								Github <i class="fab fa-github"></i>
+							</button>
 						</div>
 						<div class="resume_wrap">
-							<a href="#">
-								Resume<i class="fas fa-arrow-circle-down"></i>
-							</a>
+							<button class="resume_btn">
+								Resume <i class="fas fa-download"></i>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -397,23 +459,23 @@
 					<div class="content_padding">
 						<div class="bar_wrap">
 							<div class="skill_title"><strong>Programming(JAVA, Python, Delphi)</strong></div>
-							<div><div class="bar_border"><div class="bar_fill">70%</div></div></div>
-						</div>
-						<div class="bar_wrap">
-							<div class="skill_title"><strong>Web Publishing(HTML, CSS, Jvascript, JQuery)</strong></div>
 							<div><div class="bar_border"><div class="bar_fill">65%</div></div></div>
 						</div>
 						<div class="bar_wrap">
+							<div class="skill_title"><strong>Web Publishing(HTML, CSS, Jvascript, JQuery)</strong></div>
+							<div><div class="bar_border"><div class="bar_fill">75%</div></div></div>
+						</div>
+						<div class="bar_wrap">
 							<div class="skill_title"><strong>Database(Oracle, MongoDB)</strong></div>
-							<div><div class="bar_border"><div class="bar_fill">55%</div></div></div>
+							<div><div class="bar_border"><div class="bar_fill">70%</div></div></div>
 						</div>
 						<div class="bar_wrap">
 							<div class="skill_title"><strong>Web Develop(Servlet, Spring)</strong></div>
-							<div><div class="bar_border"><div class="bar_fill">40%</div></div></div>
+							<div><div class="bar_border"><div class="bar_fill">48%</div></div></div>
 						</div>	
 						<div class="bar_wrap">
 							<div class="skill_title"><strong>Version Managina Tool(GitHub)</strong></div>
-							<div><div class="bar_border"><div class="bar_fill">80%</div></div></div>
+							<div><div class="bar_border"><div class="bar_fill">90%</div></div></div>
 						</div>	
 					</div>
 				</div>
@@ -448,8 +510,8 @@
 								<th>No</th><th>License name</th><th>Institution</th><th>period</th>
 							</thead>
 							<tbody>
-								<tr><td>1</td><td>G-TELP</td><td>한국지텔프</td><td>??</td></tr>
-								<tr><td>2</td><td>한국사</td><td></td><td></td></tr>
+								<tr><td>1</td><td></td><td></td><td></td></tr>
+								<tr><td>2</td><td></td><td></td><td></td></tr>
 								<tr><td>3</td><td></td><td></td><td></td></tr>
 								<tr><td>4</td><td></td><td></td><td></td></tr>
 								<tr><td>5</td><td></td><td></td><td></td></tr>
@@ -480,6 +542,21 @@
 			$(this).animate({width: widthVal}, 1000);
 		});
 	});
+		
+			// Scroll TOP버튼 생성 및 TOP으로 이동
+	$(window).scroll(function(){ //스크롤이 움직이면
+		if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
+			$('.top_btn').fadeIn().css("display","flex"); 
+			// fadeIn은 잔상효과처럼 Top버튼이 나오는 것
+		} else {
+			$('.top_btn').fadeOut();
+		}
+	});
+	$('.top_btn').click(function(){
+		// Top버튼을 클릭했을때 이 동작을 하게끔 만드는 것
+		$('html, body').animate({scrollTop : 0}, 800);
+	});
+
 	// 여기서 each 는 JAVA에서 foreach문이다.
 	// 설명 >클래스가 .bar_wrap 를 선택하고 .bar_fill을 찾는다.(.bar_fill)막대기가 5개 이므로 다섯번 반복을 돈다. 
 	// this엔 bar_fill이 들어가있다. this(나자신)의 텍스트 값을 가져와야한다. 대입연산자가 있으므로 우측의 데이터를 좌측으로 값을 대입한다. 텍스트는 문자열이다.
@@ -523,12 +600,21 @@
 	// 동등비교 값==값 , 값+type===값+type이다.
 
 	$(document).on('click', '.conn_btn', function(){
-		$('.modal_wrap').css('display', 'block');
+		$('.modal_wrap').css('display', 'flex');
 		$(this).css('display', 'none');
 	});
 	$(document).on('click', '.close_btn', function(){
 		$('.modal_wrap').css('display', 'none');
 		$('.conn_btn').css('display', 'flex');
 	});
+
+	$(document).on('click', '.resume_btn', function(){
+		// 이력서 버튼 클릭시 resume.hwp 다운로드
+		window.location.assign('resume/resume.hwp');
+	})
+	$(document).on('click', '.git_btn', function(){
+		location.href='https://github.com/Mario-Hee';
+	})
+
 </script>
 </html>
